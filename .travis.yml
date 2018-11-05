@@ -5,6 +5,6 @@
         - pip install coveralls
    script:
         - python3 test_rpn.py
-        - coverage run --source=home test_rpn.py test home
+        - coverage run  test_rpn.py test
    after_success: coveralls
 
