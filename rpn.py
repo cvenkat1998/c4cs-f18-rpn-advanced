@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import operator
-
+from termcolor import colored
 
 operators = {
     '+': operator.add,
@@ -23,6 +23,18 @@ def calculate(myarg):
             arg1 = stack.pop()
             result = function(arg1, arg2)
             stack.append(result)
+            if (arg1%2 == 0):
+                print(colored(arg1, 'red'))
+            else:
+                print(colored(arg1, 'green'))
+
+            print(colored(token, 'blue'))
+
+            if (arg2%2 == 0):
+                print(colored(arg2, 'red'))
+            else:
+                print(colored(arg2, 'green'))
+            
         print(stack)
     if len(stack) != 1:
         raise TypeError("Too many parameters")
